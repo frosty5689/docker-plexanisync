@@ -29,7 +29,7 @@ RUN apk add --no-cache --update --virtual build-dependencies wget unzip && \
     cd .. && \
     apk del build-dependencies
 
-COPY run/* /plexanisync
+ADD run/* /plexanisync
 
 VOLUME /config
 
