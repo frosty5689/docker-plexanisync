@@ -2,6 +2,7 @@ import configparser
 import os
 
 config = configparser.ConfigParser()
+config.read('/config/settings.ini')
 
 config['PLEX'] = {
 	'anime_section': os.environ.get('PLEX_SECTION'),

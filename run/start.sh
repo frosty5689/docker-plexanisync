@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -f /config/settings.ini ]; then
   cp /plexanisync/settings.ini.example /config/settings.ini
