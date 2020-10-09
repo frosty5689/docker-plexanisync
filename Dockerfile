@@ -6,7 +6,6 @@ RUN apk add --no-cache --update \
     ca-certificates \
     tzdata \
     && update-ca-certificates \
-    && pip install --upgrade --no-cache-dir setuptools pyinotify envparse \
     && rm -rf /root/.cache
 
 ENV PLEX_SECTION=Anime \
