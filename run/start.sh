@@ -19,6 +19,6 @@ fi
 
 while true
 do
-  (cd /plexanisync && python PlexAniSync.py)
+  (cd /plexanisync && python PlexAniSync.py /config/settings.ini)
   sleep ${INTERVAL}
 done

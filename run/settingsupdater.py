@@ -17,5 +17,5 @@ config['ANILIST'] = {
 	'skip_list_update': os.environ.get('SKIP_LIST_UPDATE', False),
 }
 
-with open('/plexanisync/settings.ini', 'w') as configfile:
+with open('/config/settings.ini', 'w') as configfile:
 	config.write(configfile)

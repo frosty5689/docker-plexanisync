@@ -1,11 +1,11 @@
-# Docker-PlexAniSync
+# docker-plexanisync
 
-A docker version of [PlexAniSync](https://github.com/RickDB/PlexAniSync) based on [Thundernerd's docker](https://github.com/Thundernerd/Docker-PlexAniSync)
+A docker version based on Alpine of [PlexAniSync](https://github.com/RickDB/PlexAniSync) based on [RickDB's docker](https://github.com/RickDB/Docker-PlexAniSync)
 
 <div>
-  
+
   [![Build Status](https://img.shields.io/docker/cloud/build/rickdb/plexanisync.svg)](https://hub.docker.com/r/rickdb/plexanisync)
-  
+
 </div>
 
 ## Usage

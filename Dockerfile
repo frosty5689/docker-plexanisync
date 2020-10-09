@@ -1,4 +1,13 @@
-FROM python:latest
+FROM python:3.9-alpine
+
+LABEL maintainer frosty5689 <frosty5689@gmail.com>
+
+RUN apk add --no-cache --update \
+    ca-certificates \
+    tzdata \
+    && update-ca-certificates \
+    && pip install --upgrade --no-cache-dir setuptools pyinotify envparse \
+    && rm -rf /root/.cache
 
 ENV PLEX_SECTION=Anime \
     PLEX_URL=localhost \
@@ -9,16 +18,22 @@ ENV PLEX_SECTION=Anime \
 
 ENV PATH="${PATH}:~/.local/bin"
 
-RUN apt-get update &&\
-    apt-get install -y wget unzip &&\
-    wget https://github.com/RickDB/PlexAniSync/archive/master.zip &&\
-    unzip master.zip &&\
-    rm master.zip &&\
-    mv /PlexAniSync-master /plexanisync &&\
-    cd /plexanisync &&\
-    python3 -m pip install -r requirements.txt &&\
-    cd ..
+ARG PLEXANISYNC_VERSION=master
 
-COPY runsync.sh settingsupdater.py ./
+RUN apk add --no-cache --update --virtual build-dependencies wget unzip && \
+    wget https://github.com/RickDB/PlexAniSync/archive/$PLEXANISYNC_VERSION.zip && \
+    unzip master.zip && \
+    rm master.zip && \
+    mv /PlexAniSync-master /plexanisync && \
+    cd /plexanisync && \
+    python3 -m pip install -r requirements.txt && \
+    cd .. && \
+    apk del build-dependencies
 
-RUN chmod +x /runsync.sh
+COPY run/* /plexanisync
+
+VOLUME /config
+
+WORKDIR /plexanisync
+
+CMD ["/plexanisync/start.sh"]
