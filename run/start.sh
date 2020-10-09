@@ -1,4 +1,8 @@
 #!/bin/bash
+
+if [ ! -f /config/settings.ini ]; then
+  cp /plexanisync/settings.ini.example /config/settings.ini
+fi
 echo "Updating settings.ini"
 python settingsupdater.py
 

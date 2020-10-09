@@ -1,4 +1,4 @@
-# docker-plexanisync
+# frosty5689/docker-plexanisync
 
 A docker version based on Alpine of [PlexAniSync](https://github.com/RickDB/PlexAniSync) based on [RickDB's docker](https://github.com/RickDB/Docker-PlexAniSync)
 
@@ -7,43 +7,24 @@ A docker version based on Alpine of [PlexAniSync](https://github.com/RickDB/Plex
 
 ## Usage
 
-### docker
-
 Generic x64 systems (AMD / Intel)
 ```
 docker create \
   --name=plexanisync \
-  -e PUID=1000 \
-  -e PGID=1000 \
+  -v /path/to/your/plexanisync/config:/config \
   -e PLEX_SECTION=Anime \
   -e PLEX_URL=http://127.0.0.1:32400 \
   -e PLEX_TOKEN=SomePlexToken \
   -e ANI_USERNAME=SomeUser \
   -e ANI_TOKEN=SomeToken \
   -e INTERVAL=3600 \
-  --restart unless-stopped \
-  rickdb/plexanisync:latest \
-  /runsync.sh
+  frosty5689/plexanisync:latest \
 ```
 
-ARM based systems (i.e. Raspberry Pi)
-```
-docker create \
-  --name=plexanisync \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e PLEX_SECTION=Anime \
-  -e PLEX_URL=http://127.0.0.1:32400 \
-  -e PLEX_TOKEN=SomePlexToken \
-  -e ANI_USERNAME=SomeUser \
-  -e ANI_TOKEN=SomeToken \
-  -e INTERVAL=3600 \
-  --restart unless-stopped \
-  rickdb/plexanisync:arm \
-  /runsync.sh
-```
+### Volumes
+* `/config` - mount this to host if you want to modify configs that aren't available in the ENV var
 
-# Environment Variables
+### Environment Variables
 | ID 	| Default 	|  Required 	| Note 	|
 |---------------------	|-----------	|-----------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | PLEX_SECTION 	| Anime 	| ✅ 	| The library where your anime resides 	|
