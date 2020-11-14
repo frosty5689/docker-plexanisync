@@ -1,10 +1,10 @@
+[hub]: https://hub.docker.com/r/frosty5689/plexanisync/
+
 # frosty5689/docker-plexanisync
 
 A docker version based on Alpine of [PlexAniSync](https://github.com/RickDB/PlexAniSync) based on [RickDB's docker](https://github.com/RickDB/Docker-PlexAniSync)
 
-[![](https://images.microbadger.com/badges/version/frosty5689/plexanisync.svg)](https://microbadger.com/images/frosty5689/plexanisync "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/frosty5689/plexanisync.svg)](https://microbadger.com/images/frosty5689/plexanisync "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/frosty5689/plexanisync.svg)][hub]
-
-[![Docker Stars](https://img.shields.io/docker/stars/frosty5689/plexanisync.svg)][hub]
+[![](https://images.microbadger.com/badges/version/frosty5689/plexanisync.svg)](https://microbadger.com/images/frosty5689/plexanisync "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/frosty5689/plexanisync.svg)](https://microbadger.com/images/frosty5689/plexanisync "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/frosty5689/plexanisync.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/frosty5689/plexanisync.svg)][hub]
 
 
 ## Usage
